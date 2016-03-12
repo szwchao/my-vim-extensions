@@ -3,7 +3,7 @@
 " Description:    Custom command for CtrlP
 " =============================================================================
 
-if (exists('g:loaded_ctrlp_cmd') && g:loaded_cmd)
+if (exists('g:loaded_ctrlp_cmd') && g:loaded_ctrlp_cmd)
             \ || v:version < 700 || &cp
     finish
 endif
@@ -36,8 +36,8 @@ let s:cmd_list =
 call add(g:ctrlp_ext_vars, {
             \ 'init': 'ctrlp#cmd#init()',
             \ 'accept': 'ctrlp#cmd#accept',
-            \ 'lname': 'Custom Command',
-            \ 'sname': 'Commands',
+            \ 'lname': 'commands',
+            \ 'sname': 'commands',
             \ 'type': 'line',
             \ 'sort': 0,
             \ 'specinput': 0,
