@@ -19,10 +19,24 @@ else
   let g:ctrlp_ext_vars = [s:modified_var]
 endif
 
-let s:self_path = expand("<sfile>")
+function! ctrlp#modified#exec()
+  let s:modified_files = split(system('git diff  --name-only'), "\n")
+
+  if len(s:modified_files) == 0
+    echo("No modified files in this git repo!")
+  else
+    call ctrlp#init(ctrlp#modified#id())
+  endif
+endfunction
 
 function! ctrlp#modified#init()
-  return split(system('git diff  --name-only'), "\n")
+  let modified_files = split(system('git diff  --name-only'), "\n")
+  if len(modified_files) == 0
+    echo("No modified files in this git repo!")
+    return []
+  else
+    return modified_files
+  endif
 endfunc
 
 function! ctrlp#modified#exit()

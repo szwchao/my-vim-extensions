@@ -36,6 +36,7 @@ let s:cmd_list =
 call add(g:ctrlp_ext_vars, {
             \ 'init': 'ctrlp#cmd#init()',
             \ 'accept': 'ctrlp#cmd#accept',
+            \ 'exit': 'ctrlp#cmd#exit()',
             \ 'lname': 'commands',
             \ 'sname': 'commands',
             \ 'type': 'line',
@@ -61,6 +62,9 @@ function! ctrlp#cmd#accept(mode, str)
     else
         call feedkeys(s:cmd_list[i][1], 't')
     endif
+endfunction
+
+function! ctrlp#cmd#exit()
 endfunction
 
 function! ctrlp#cmd#id()
