@@ -17,6 +17,7 @@ let s:cmd_list =
             \ ['设置cpp的tag'                  , ':set tags+=' . $VIM . '/tools/tags/cpp'           , 1] ,
             \ ['删除回车符^M'                  , ':%s/\r//g'                                        , 1] ,
             \ ['删除行尾空格'                  , ':%s/\s\+$//g'                                     , 1] ,
+            \ ['对于tab缩进的文件设置对齐线'   , ':set list lcs=tab:\|\ '                           , 1] ,
             \ ['压缩多行空行为一行'            , ':%s/\(\s*\n\)\+/\r/'                              , 0] ,
             \ ['插入日期和时间'                , ':call InsertDateTime()'                           , 1] ,
             \ ['单词首字母大写'                , ':%s/\w*/\u&/g'                                    , 0] ,
